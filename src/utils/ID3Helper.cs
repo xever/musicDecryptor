@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using ATL.AudioData;
 
-namespace WindowsFormsApp1
+namespace Tomusic
 {
 
     public class ID3Info

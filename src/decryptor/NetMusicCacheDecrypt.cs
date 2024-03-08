@@ -7,7 +7,7 @@ using ATL.AudioData;
 using ATL;
 using System.IO;
 
-namespace WindowsFormsApp1
+namespace Tomusic
 {
     /// <summary>
     /// 网易云缓存解密

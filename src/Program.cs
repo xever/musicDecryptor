@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace Tomusic
 {
     static class Program
     {
@@ -20,12 +20,12 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form1 mainform = new WindowsFormsApp1.Form1();
-            ((log4net.Repository.Hierarchy.Hierarchy)log4net.LogManager.GetRepository()).Root.AddAppender(mainform);
-            BasicConfigurator.Configure(mainform);
+            MainWin form = new Tomusic.MainWin();
+            ((log4net.Repository.Hierarchy.Hierarchy)log4net.LogManager.GetRepository()).Root.AddAppender(form);
+            BasicConfigurator.Configure(form);
             ((Hierarchy)LogManager.GetRepository()).Root.Level = Level.Info;
 
-            Application.Run(mainform);
+            Application.Run(form);
         }
     }
 }

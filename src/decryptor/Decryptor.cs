@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1
+namespace Tomusic
 {
 
     /// <summary>
@@ -23,12 +23,22 @@ namespace WindowsFormsApp1
         /// <summary>
         /// 自动读取mp3信息重命名
         /// </summary>
-        public bool AutoRename{ get; set; } = true;
+        public bool AutoRename = true;
+        
+        public bool getAutoRename(){
+        	return AutoRename;
+        }
+        public void setAutoRename(bool val){
+        	this.AutoRename=val;
+        }
 
         /// <summary>
         /// 目标目录
         /// </summary>
-        public string TargetDirectory { get; set; } = "";
+        public string TargetDirectory = "";
+        public string getTargetDirectory(){
+        	return TargetDirectory;
+        }
 
         private Decryptor()
         {

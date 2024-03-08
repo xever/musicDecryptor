@@ -12,7 +12,7 @@ using System.IO.Compression;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 
-namespace WindowsFormsApp1
+namespace Tomusic
 {
     public class HttpHelper
     {
