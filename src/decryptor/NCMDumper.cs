@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using TagLib;
 
-namespace NCMDumpCore
+namespace Tomusic
 {
     public class NCMDumper
     {
@@ -228,10 +228,10 @@ namespace NCMDumpCore
 
             string format = metainfo.format;
             if (string.IsNullOrEmpty(format)) format = "mp3";
-            System.IO.File.WriteAllBytes("{OutputPath}.{format}", AudioData);
+            System.IO.File.WriteAllBytes(OutputPath+"."+format, AudioData);
 
             // Add tag and cover
-            AddTag("{OutputPath}.{format}", ImageData, metainfo);
+            AddTag(OutputPath+"."+format, ImageData, metainfo);
             ms.Dispose();
             return true;
         }

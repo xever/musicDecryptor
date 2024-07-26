@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic; 
 
-namespace NCMDumpCore
+namespace Tomusic
 {
     public class MetaInfo
     {
         public string musicId { get; set; }
         public string musicName { get; set; }
-        public List<string> artist { get; set; }
+        public List<List<string>> artist { get; set; }
         public string albumId { get; set; }
         public string album { get; set; }
         public string albumPicDocId { get; set; }

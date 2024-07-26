@@ -91,6 +91,7 @@
     <Compile Include="src\decryptor\NCMDumper.cs" />
     <Compile Include="src\decryptor\NetMusicCacheDecrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\decryptor\NetMusicDecrypt.cs" />
     <Compile Include="src\decryptor\RC4_NCM.cs" />
     <Compile Include="src\decryptor\RC4_NCM_Stream.cs" />
     <Compile Include="src\MainWin.cs">

@@ -19,7 +19,7 @@ namespace Tomusic
 
         public abstract byte[] Decrypt(byte[] cacheFileData);
 
-        public byte[] Decrypt(string cacheFile)
+        public virtual byte[] Decrypt(string cacheFile)
         {
             currentCacheFile = cacheFile;
             return Decrypt(File.ReadAllBytes(cacheFile));

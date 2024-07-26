@@ -1,4 +1,4 @@
-﻿namespace NCMDumpCore
+﻿namespace Tomusic
 {
     public class RC4_NCM
     {

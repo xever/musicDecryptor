@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace NCMDumpCore
+namespace Tomusic
 {
 	public class RC4_NCM_Stream : Stream
 	{
