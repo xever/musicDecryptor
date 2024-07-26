@@ -124,7 +124,10 @@ namespace Tomusic
             tagfile.Tag.Title = metainfo.musicName;
 //            tagfile.Tag.Performers = metainfo.artist.Select(x => x[0]).ToArray();
             tagfile.Tag.Album = metainfo.album;
-            tagfile.Tag.Subtitle = string.Join(";", metainfo.alias);
+            
+            if(metainfo.alias != null && metainfo.alias.Count>0){
+              tagfile.Tag.Subtitle = string.Join(";", metainfo.alias);
+            }
             tagfile.Save();
         }
 
