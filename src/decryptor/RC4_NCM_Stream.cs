@@ -3,6 +3,11 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
+
+/// <summary>
+/// 解密，
+/// 从源码转写过来 https://github.com/kingsznhone/NCMDump.NET 
+/// </summary>
 namespace Tomusic
 {
 	public class RC4_NCM_Stream : Stream

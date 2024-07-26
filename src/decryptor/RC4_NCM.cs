@@ -1,4 +1,9 @@
-﻿namespace Tomusic
+﻿/// <summary>
+/// 解密算法，
+/// 从源码转写过来 https://github.com/kingsznhone/NCMDump.NET 
+/// 适配低版本的.net写法
+/// </summary>
+namespace Tomusic
 {
     public class RC4_NCM
     {
@@ -7,7 +12,7 @@
 
         public RC4_NCM(byte[] key)
         {
-           // Keybox = Enumerable.Range(0, 256).Select(i => (byte)i).ToArray();
+//            Keybox = Enumerable.Range(0, 256).Select(i => (byte)i).ToArray();
            Keybox = new byte[256];
 
             int len = 256;

@@ -27,7 +27,10 @@ namespace Tomusic
 
         public void Decrypt(string cacheFile, string decodedFile)
         {
-            File.WriteAllBytes(decodedFile, Decrypt(cacheFile));
+        	byte[] audio = Decrypt(cacheFile);
+        	if(audio.Length > 10){
+            	File.WriteAllBytes(decodedFile, audio);
+        	}
         }
 
         public  bool isAcceptable(string cacheFile)

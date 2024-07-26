@@ -6,12 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net;
-using System.Runtime.InteropServices;
-using System.Runtime.CompilerServices;
-using System.Collections.Generic;
 using Newtonsoft.Json;
 using TagLib;
 
+/// <summary>
+/// 解密算法，
+/// 从源码转写过来 https://github.com/kingsznhone/NCMDump.NET 
+/// </summary>
 namespace Tomusic
 {
     public class NCMDumper
@@ -174,6 +175,7 @@ namespace Tomusic
 
         public async Task<bool> ConvertAsync(string path)
         {
+        	byte[] empty = new byte[1];
             if (!System.IO.File.Exists(path))
             {
 //                Console.WriteLine($"File {path} Not Exist!");
@@ -224,16 +226,22 @@ namespace Tomusic
             byte[] AudioData = await ReadAudioData(ms, RC4Key);
 
             // Flush Audio Data to disk drive
-            string OutputPath = path.Substring(0, path.LastIndexOf('.'));
+//            string OutputPath = path.Substring(0, path.LastIndexOf('.'));
+		
+			string fileName = path.Substring(path.LastIndexOf(Path.DirectorySeparatorChar));
+            string audioName = fileName.Substring(0,fileName.LastIndexOf('.'));
 
             string format = metainfo.format;
             if (string.IsNullOrEmpty(format)) format = "mp3";
-            System.IO.File.WriteAllBytes(OutputPath+"."+format, AudioData);
+			
+			string filePath = Decryptor.Instance.TargetDirectory+audioName+"."+format;
+            System.IO.File.WriteAllBytes(filePath, AudioData);
 
             // Add tag and cover
-            AddTag(OutputPath+"."+format, ImageData, metainfo);
+            AddTag(filePath, ImageData, metainfo);
             ms.Dispose();
             return true;
+//			return AudioData;
         }
     }
 

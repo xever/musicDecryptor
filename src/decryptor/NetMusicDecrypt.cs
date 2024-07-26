@@ -55,12 +55,14 @@ namespace Tomusic
 			
             _neteaseCrypt.Convert(cacheFile);
             
+            return new byte[1];
+            
             // lib 内部写入了mp3 再返回给主程序
-            string mpPath = cacheFile.Replace(".ncm",".mp3");
+//            string mpPath = cacheFile.Replace(".ncm",".mp3");
 			
 //			_logger.Info("处理完成--"+mpPath);
 			
-            return File.ReadAllBytes(mpPath);
+//            return File.ReadAllBytes(mpPath);
         }
 
 
