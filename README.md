@@ -6,6 +6,7 @@
 ```
 基于原作者代码开发，
 增加了自动生成已转换文件夹，增加了应用图标
+增加了对网易ncm文件的支持
 ```
 
 ## 再次开发指南
@@ -61,3 +62,16 @@ Decryptor通过单例模式对外提供调用。
 
 判断拖入的是文件夹还是文件，文件夹的话遍历子文件，依次处理。解码方式就是钢说的，遍历decryptors，如果支持就解码。
 解码完后，读取ID3信息，对文件进行重命名。
+
+##合并dll到exe
+借助ILMerge工具,把dll 和exe文件合并到一个大exe中
+```
+ILMerge.exe Tomusic.exe /out:Tomusic-one.exe ATL.dll log4net.dll netstandard.dll  Newtonsoft.Json.dll TagLibSharp.dll 
+```
+
+## changelog
+#### 2024-07, v 1.1.1.0
+-增加对网易ncm文件的支持，缝合了 [NCMDump.NET](https://github.com/kingsznhone/NCMDump.NET)
+
+#### 2024-03，v 1.0.1.0
+-可自动生成目标文件夹，默认在程序路径 ```/已转换```
